@@ -17,7 +17,7 @@
     "linkInvalid": "이 링크로는 로그인할 수 없습니다. 이메일 인증 중이었다면 이미 인증이 완료되었을 수 있으니 아래에서 로그인하세요. 비밀번호 재설정은 새 링크를 요청한 뒤 요청한 브라우저에서 열어 주세요."
   },
   "Sidebar": {
-    "title": "WhatsApp용 CRM 템플릿",
+    "title": "ChatFlow CRM",
     "primaryNav": "기본 메뉴",
     "dashboard": "대시보드",
     "inbox": "인박스",
@@ -1969,7 +1969,8 @@
       "deals": "딜 & 통화",
       "inbox": "인박스",
       "members": "팀원",
-      "api": "API 키"
+      "api": "API 키",
+      "smtp": "이메일 및 SMTP"
     },
     "groups": {
       "account": "계정",
@@ -2238,7 +2239,7 @@
     "titleJoin": "계정 만들고 참여하기",
     "title": "계정 만들기",
     "descJoin": "이메일을 인증한 뒤 초대를 수락해 팀에 참여하세요.",
-    "desc": "WhatsApp용 CRM Template을 시작하세요",
+    "desc": "ChatFlow CRM을 시작하세요",
     "fullNameLabel": "이름",
     "fullNamePlaceholder": "홍길동",
     "emailLabel": "이메일",
@@ -2412,7 +2413,7 @@
     }
   },
   "Metadata": {
-    "description": "직접 호스팅할 수 있는 WhatsApp용 CRM 템플릿입니다."
+    "description": "ChatFlow CRM — 직접 호스팅할 수 있는 팀용 WhatsApp CRM입니다."
   },
   "Currency": {
     "USD": "미국 달러",

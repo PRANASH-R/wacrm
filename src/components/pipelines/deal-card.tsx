@@ -81,7 +81,7 @@ export function DealCard({ deal, stage, onEdit, isOverlay }: DealCardProps) {
       </div>
 
       <div className="mt-2 flex items-center justify-between">
-        <span className="text-sm font-bold text-primary">
+        <span className="text-sm font-mono font-bold text-primary">
           {formatCurrency(deal.value, deal.currency)}
         </span>
         {deal.expected_close_date && (

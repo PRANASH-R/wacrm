@@ -10,7 +10,7 @@ import {
 import { applyInboxFilter, type InboxFilter } from "@/lib/inbox/inbox-filters";
 import { cn } from "@/lib/utils";
 import type { Conversation, ConversationStatus, Tag } from "@/types";
-import { Search, ChevronDown, X } from "lucide-react";
+import { Search, ChevronDown, X, Camera, Mic, FileText } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
@@ -278,7 +278,7 @@ export function ConversationList({
               >
                 {t("tags")}
                 {selectedTagIds.length > 0 && (
-                  <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                  <span className="flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-primary px-1.5 font-mono text-[10px] font-bold text-primary-foreground shadow-sm">
                     {selectedTagIds.length}
                   </span>
                 )}
@@ -458,11 +458,13 @@ function ConversationItem({
       onClick={handleClick}
       className={cn(
         "flex w-full items-start gap-3 px-3 py-3 text-left transition-colors hover:bg-muted/50",
-        isActive && "border-l-2 border-primary bg-muted/70"
+        isActive
+          ? "border-l-[3px] border-primary bg-primary/8 shadow-sm"
+          : "border-l-[3px] border-transparent"
       )}
     >
       {/* Avatar */}
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium text-foreground">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary ring-1 ring-border">
         {contact?.avatar_url ? (
           <img
             src={contact.avatar_url}
@@ -480,15 +482,35 @@ function ConversationItem({
           <span className="truncate text-sm font-medium text-foreground">
             {displayName}
           </span>
-          <span className="shrink-0 text-[10px] text-muted-foreground">{timeAgo}</span>
+          <span className="shrink-0 font-mono text-[10px] text-muted-foreground">{timeAgo}</span>
         </div>
         <div className="mt-0.5 flex items-center justify-between gap-2">
-          <p className="truncate text-xs text-muted-foreground">
-            {conversation.last_message_text || t("noMessagesYet")}
-          </p>
+          <div className="flex items-center gap-1 min-w-0 flex-1 text-xs text-muted-foreground truncate">
+            {conversation.last_message_text?.includes("[Image]") || conversation.last_message_text?.includes("📷") ? (
+              <span className="inline-flex items-center gap-1 text-sky-400">
+                <Camera className="h-3 w-3 shrink-0" />
+                <span className="truncate">Photo</span>
+              </span>
+            ) : conversation.last_message_text?.includes("[Audio]") || conversation.last_message_text?.includes("🎙️") ? (
+              <span className="inline-flex items-center gap-1 text-amber-400">
+                <Mic className="h-3 w-3 shrink-0" />
+                <span className="truncate">Voice note</span>
+              </span>
+            ) : conversation.last_message_text?.includes("[Document]") || conversation.last_message_text?.includes("📄") ? (
+              <span className="inline-flex items-center gap-1 text-emerald-400">
+                <FileText className="h-3 w-3 shrink-0" />
+                <span className="truncate">Document</span>
+              </span>
+            ) : (
+              <span className="truncate">{conversation.last_message_text || t("noMessagesYet")}</span>
+            )}
+          </div>
+
+
+
           <div className="flex shrink-0 items-center gap-1.5">
             {conversation.unread_count > 0 && (
-              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+              <span className="flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-primary px-1.5 font-mono text-[10px] font-bold text-primary-foreground shadow-sm">
                 {conversation.unread_count}
               </span>
             )}

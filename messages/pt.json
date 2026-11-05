@@ -17,7 +17,7 @@
     "linkInvalid": "Não foi possível entrar com esse link. Se estava confirmando seu e-mail, ele já pode estar verificado — basta entrar abaixo. Para redefinir a senha, peça um novo link e abra-o no mesmo navegador em que o solicitou."
   },
   "Sidebar": {
-    "title": "Modelo de CRM para WhatsApp",
+    "title": "ChatFlow CRM",
     "primaryNav": "Principal",
     "dashboard": "Painel",
     "inbox": "Caixa de entrada",
@@ -1969,7 +1969,8 @@
       "deals": "Negócios e moeda",
       "inbox": "Caixa de entrada",
       "members": "Membros da equipe",
-      "api": "Chaves de API"
+      "api": "Chaves de API",
+      "smtp": "E-mail e SMTP"
     },
     "groups": {
       "account": "Conta",
@@ -2238,7 +2239,7 @@
     "titleJoin": "Criar conta e entrar na equipe",
     "title": "Criar conta",
     "descJoin": "Confirme seu e-mail e depois aceite o convite para entrar na sua equipe.",
-    "desc": "Comece a usar o Modelo de CRM para WhatsApp",
+    "desc": "Comece a usar o ChatFlow CRM",
     "fullNameLabel": "Nome completo",
     "fullNamePlaceholder": "João Silva",
     "emailLabel": "E-mail",
@@ -2412,7 +2413,7 @@
     }
   },
   "Metadata": {
-    "description": "Modelo de CRM para WhatsApp que você pode hospedar por conta própria."
+    "description": "ChatFlow CRM — CRM para WhatsApp auto-hospedável para equipes."
   },
   "Currency": {
     "USD": "Dólar americano",

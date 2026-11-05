@@ -43,7 +43,7 @@ const SPEC_DEFAULT_STAGES = [
   { nameKey: "newLead", color: "#3b82f6", position: 0 }, // blue
   { nameKey: "qualified", color: "#eab308", position: 1 }, // yellow
   { nameKey: "proposalSent", color: "#f97316", position: 2 }, // orange
-  { nameKey: "negotiation", color: "#8b5cf6", position: 3 }, // purple
+  { nameKey: "negotiation", color: "#06b6d4", position: 3 }, // cyan
   { nameKey: "won", color: "#22c55e", position: 4 }, // green
 ] as const;
 

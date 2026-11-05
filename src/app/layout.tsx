@@ -30,8 +30,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const metadata: Metadata = {
   title: {
-    default: "wacrm",
-    template: "%s — wacrm",
+    default: "ChatFlow CRM",
+    template: "%s — ChatFlow CRM",
   },
   robots: {
     index: false,

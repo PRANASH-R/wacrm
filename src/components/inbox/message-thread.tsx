@@ -760,6 +760,17 @@ export function MessageThread({
         .eq("id", conversation.id);
 
       onStatusChange(conversation.id, status);
+
+      if (status === "closed" && (conversation.ai_reply_count ?? 0) > 0) {
+        fetch("/api/ai/summary", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            conversation_id: conversation.id,
+            reason: "closed",
+          }),
+        }).catch(() => {});
+      }
     },
     [conversation, onStatusChange]
   );

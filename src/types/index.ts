@@ -195,6 +195,8 @@ export interface Conversation {
   ai_autoreply_disabled?: boolean;
   ai_reply_count?: number;
   ai_handoff_summary?: string | null;
+  /** Timestamp when an executive conversation summary email was dispatched */
+  ai_summary_sent_at?: string | null;
 }
 
 // ============================================================
@@ -711,4 +713,41 @@ export interface QuickReply {
   interactive_payload?: InteractiveMessagePayload | null;
   created_at: string;
   updated_at: string;
+}
+
+// ============================================================
+// SMTP Email & AI Conversation Summaries (migration 060)
+// ============================================================
+
+export interface AccountSmtpSettings {
+  account_id: string;
+  host: string;
+  port: number;
+  secure: boolean;
+  username: string;
+  password?: string;
+  from_name: string;
+  from_email: string;
+  recipient_override_email?: string | null;
+  auto_summary_enabled: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AiConversationSummary {
+  id: string;
+  account_id: string;
+  conversation_id: string;
+  contact_id?: string | null;
+  overview: string;
+  requirements: string[];
+  questions: string[];
+  preferences: string[];
+  decisions: string[];
+  final_outcome: string;
+  recommended_action: string;
+  sentiment: 'positive' | 'neutral' | 'urgent' | 'negative';
+  trigger_reason: 'completed' | 'handoff' | 'closed';
+  email_sent_to?: string | null;
+  created_at: string;
 }

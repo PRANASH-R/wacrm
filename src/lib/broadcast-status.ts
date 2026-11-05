@@ -66,7 +66,7 @@ export const recipientStatusConfig: Record<RecipientStatus, StatusDisplay> = {
   },
   replied: {
     label: "replied",
-    classes: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    classes: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   },
   failed: {
     label: "failed",

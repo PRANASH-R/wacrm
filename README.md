@@ -1,6 +1,6 @@
-# wacrm — CRM Template for WhatsApp
+# ChatFlow CRM — WhatsApp CRM for Teams
 
-> Self-hostable CRM template for WhatsApp® — shared inbox, contacts,
+> Self-hostable WhatsApp CRM for teams — shared inbox, contacts,
 > sales pipelines, broadcasts, and no-code automations. Fork it, brand
 > it, host it.
 

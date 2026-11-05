@@ -225,7 +225,7 @@ function StageColumn({
           {deals.length}
         </span>
       </div>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs font-mono font-medium text-muted-foreground">
         {formatCurrency(totalValue, currency)}
       </p>
 
